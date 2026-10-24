@@ -2,14 +2,24 @@
 
 A browser recreation of Konami's 2002 Game Boy Color game *Yu-Gi-Oh! Dark Duel Stories*
 (*Duel Monsters III: Tri-Holy God Advent* in Japan), built for learning purposes only.
-Not for sale, not for online distribution.
+Not for sale. Yu-Gi-Oh!, its characters, card art and music belong to Kazuki Takahashi
+and Konami; they are used here non-commercially and will come down on request.
 
 ## Play
 
-Double-click **`Play Dark Duel Stories.bat`** — it starts a tiny local web server and opens the game in your browser
+**In a browser, including a phone: <https://mikale4.github.io/yugioh-dds/>**
+
+Or locally, double-click **`Play Dark Duel Stories.bat`** — it starts a tiny local web server and opens the game in your browser
 (`http://localhost:8765`). Python 3 must be installed (it is used only to serve the files).
 
 Alternatively run `python game/tools/serve.py` and open the printed address.
+
+The published site is this repo's `main` branch served by GitHub Pages, so `git push`
+updates it. Two things differ from a local checkout: the soundtrack in `game/audio/bgm`
+is the 64 kb/s mono web copy (the 320 kb/s rips stay out of git in `game/audio/bgm-src`,
+re-encoded by `game/tools/encode_audio.sh`), and off localhost the asset cache-buster in
+`game/index.html` is a fixed build tag instead of a timestamp, so phones cache the art.
+Bump that tag whenever you rebuild the atlases, or the site will serve the old ones.
 
 Controls (keyboard or mouse/touch):
 
