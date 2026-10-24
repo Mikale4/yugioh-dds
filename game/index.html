@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Yu-Gi-Oh! Dark Duel Stories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="shell">
+  <div id="frame">
+    <canvas id="screen" width="160" height="144"></canvas>
+  </div>
+  <div id="help">
+    <b>Controls</b> &nbsp; Arrows / WASD: move &nbsp;·&nbsp; Z / Enter: confirm (A) &nbsp;·&nbsp; X: cancel (B) &nbsp;·&nbsp; ` (backtick): select / AUTO &nbsp;·&nbsp; Space: sort &nbsp;·&nbsp; Tab: filter &nbsp;·&nbsp; Esc: demo on/off &nbsp;·&nbsp; Mouse / touch also works.
+    <span id="scaleinfo"></span>
+  </div>
+</div>
+<script>
+(function () {
+  // Locally a fresh stamp every load, so a rebuilt atlas is never served from cache.
+  // Published, a fixed build tag, so a phone caches the 3 MB of art instead of re-downloading it.
+  var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === "file:";
+  var v = "?v=" + (local ? Date.now() : "2026-10-24");
+  window.ASSET_V = v;   // images and JSON get the same query as the scripts
+  var files = ["data/cards.js", "data/fusions.js", "data/decks.js", "js/core/gfx.js", "js/core/input.js", "js/core/audio.js", "js/core/music.js", "js/core/assets.js", "js/data/cardsdb.js", "js/data/banlist.js", "js/data/effects.js", "js/data/shop.js", "js/data/bonuses.js", "js/data/duelists.js", "js/data/starters.js", "js/data/deckbuild.js", "js/game/save.js", "js/game/duel.js", "js/game/ai.js", "js/ui/widgets.js", "js/screens/title.js", "js/screens/talk.js", "js/screens/menu.js", "js/screens/campaign.js", "js/screens/duelscreen.js", "js/screens/deck.js", "js/screens/password.js", "js/screens/record.js", "js/main.js", "js/runner.js"];
+  for (var i = 0; i < files.length; i++) document.write('<script src="' + files[i] + v + '"><\/script>');
+})();
+</script>
+</body>
+</html>

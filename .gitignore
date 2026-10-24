@@ -1,0 +1,14 @@
+# Reference material used only to build the game data/art locally (and ~90 MB)
+gameplay references/
+image references/
+
+# Original 320 kb/s soundtrack rips. The repo ships the 64 kb/s mono web copies
+# in game/audio/bgm; re-encode from here with tools/encode_audio.sh if needed.
+game/audio/bgm-src/
+
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+
+.claude/settings.local.json

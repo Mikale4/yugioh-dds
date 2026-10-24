@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dds",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["game/tools/serve.py", "8765"],
+      "port": 8765
+    }
+  ]
+}
